@@ -2,9 +2,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zero/cubit/app_states.dart';
-import 'package:zero/result_screen.dart';
+import 'package:zero/views/result_screen.dart';
 
-import 'cubit/app_cubit.dart';
+import '../cubit/app_cubit.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

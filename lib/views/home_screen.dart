@@ -31,8 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
             actions: [
               IconButton(
                   onPressed: () {
-                    AppCubit.get(context).themeToggle();
-                    print('hello');},
+                    AppCubit.get(context).themeToggle();},
                   icon: Icon(
                     cubit.isDark==false ? Icons.brightness_4 : Icons.brightness_4_outlined,
                     size: 23,

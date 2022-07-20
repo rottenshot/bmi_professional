@@ -5,7 +5,7 @@ class TestResult extends StatelessWidget {
   final double finalResult;
   final bool isMale;
 
-  const TestResult(
+   TestResult(
       {Key? key,
       required this.age,
       required this.isMale,
@@ -31,28 +31,42 @@ class TestResult extends StatelessWidget {
 
   String get imagePath {
     String path = '';
-    // if(finalResult < 18.5 && finalResult <  ) {result = 'Underweight';}
 
     if (finalResult >= 18.5 && finalResult <= 24.9 && isMale) {
-      path = 'assets/images/man_normal.png';
+      path = bodyShapeImages[0]['NormalMan']!;
     } else if (finalResult >= 18.5 && finalResult <= 24.9 && !isMale) {
-      path = 'assets/images/normal_woman.png';
+      path = bodyShapeImages[1]['NormanWoman']!;
     } else if (finalResult >= 25 && finalResult <= 29.9 && isMale) {
-      path = 'assets/images/man_overweight.png';
+      path = bodyShapeImages[0]['OverWeightMan']!;
     } else if (finalResult >= 25 && finalResult <= 29.9 && !isMale) {
-      path = 'assets/images/overweight_woman.png';
+      path = bodyShapeImages[1]['OverWeightWoman']!;
     } else if (finalResult >= 30 && isMale) {
-      path = 'assets/images/man_obese.png';
+      path = bodyShapeImages[0]['ObeseMan']!;
     } else if (finalResult >= 30 && !isMale) {
-      path = 'assets/images/obese_woman.png';
+      path = bodyShapeImages[1]['ObeseWoman']!;
     } else if (finalResult < 18.5 && isMale) {
-      path = 'assets/images/man_underweight.png';
+      path = bodyShapeImages[0]['UnderweightMan']!;
     } else if (finalResult < 18.5 && !isMale) {
-      path = 'assets/images/underweight_woman.png';
+      path = bodyShapeImages[1]['UnderweightWoman']!;
     }
 
     return path;
   }
+
+  List<Map<String, String>> bodyShapeImages = [
+    {
+      'UnderweightMan': 'assets/images/man_underweight.png',
+      'NormalMan': 'assets/images/man_normal.png',
+      'ObeseMan': 'assets/images/man_obese.png',
+      'OverweightMan': 'assets/images/man_overweight.png',
+    },
+    {
+      'UnderweightWoman': 'assets/images/underweight_woman.png',
+      'NormalWoman': 'assets/images/normal_woman.png',
+      'ObeseWoman': 'assets/images/obese_woman.png',
+      'OverweightWoman': 'assets/images/overweight_woman.png',
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zero/cubit/app_states.dart';
-import 'package:zero/network/local.dart';
+
+import '../network/local_handler.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitialState());
